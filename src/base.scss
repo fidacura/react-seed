@@ -1,0 +1,171 @@
+$small: "only screen and (min-width: 480px)";
+$medium: "only screen and (min-width: 768px)";
+$large: "only screen and (min-width: 768px)";
+$xlarge: "only screen and (min-width: 1140px)";
+
+@mixin phone {
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$large} {
+    @content;
+  }
+}
+
+@mixin xldesktop {
+  @media #{$xlarge} {
+    @content;
+  }
+}
+
+// @font-face {
+//   font-family: 'FontName';
+//   src: url('../public/fonts/font.woff') format('woff'),
+//     url('../public/fonts/font.woff2') format('woff2');
+//   font-display: fallback;
+//   font-weight: 485;
+//   font-style: normal;
+// }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+a {
+  cursor: pointer;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
