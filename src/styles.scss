@@ -1,4 +1,4 @@
-@import "base.scss";
+// @import 'base.scss';
 
 // Theme Variables
 $light-theme: (
@@ -29,7 +29,7 @@ $dark-theme: (
 body {
   color: theme($light-theme, text-color);
   background-color: theme($light-theme, background-color);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   transition:
@@ -43,28 +43,18 @@ body {
 }
 
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-bottom: 0.5em;
+h1 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 // Links
 a {
   color: theme($light-theme, link-color);
   text-decoration: none;
-
-  // &:hover {
-  //   text-decoration: underline;
-  // }
 }
 
 // Dark Theme
-body[data-theme="dark"] {
+body[data-theme='dark'] {
   color: theme($dark-theme, text-color);
   background-color: theme($dark-theme, background-color);
 
