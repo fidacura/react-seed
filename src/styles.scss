@@ -1,5 +1,74 @@
 @import "base.scss";
 
+// Theme Variables
+$light-theme: (
+  text-color: #000000,
+  background-color: #ecf0f1,
+  link-color: #3498db,
+);
+
+$dark-theme: (
+  text-color: #ecf0f1,
+  background-color: #000000,
+  link-color: #2ecc71,
+);
+
+// Function to get theme properties
+@function theme($theme-map, $property) {
+  @return map-get($theme-map, $property);
+}
+
+// Basic Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Default Theme
+body {
+  color: theme($light-theme, text-color);
+  background-color: theme($light-theme, background-color);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+// Root element padding
 #root {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 0.5em;
+}
+
+// Links
+a {
+  color: theme($light-theme, link-color);
+  text-decoration: none;
+
+  // &:hover {
+  //   text-decoration: underline;
+  // }
+}
+
+// Dark Theme
+body[data-theme="dark"] {
+  color: theme($dark-theme, text-color);
+  background-color: theme($dark-theme, background-color);
+
+  a {
+    color: theme($dark-theme, link-color);
+  }
 }
