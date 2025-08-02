@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel src/index.html --open",
-    "build": "parcel build src/index.html",
+    "copy-images": "mkdir -p dist && cp static/* dist/",
+    "dev": "yarn copy-images && parcel src/index.html --open",
+    "build": "parcel build src/index.html && yarn copy-images",
+    "clean": "rm -rf dist/ .parcel-cache/",
     "format": "prettier --write \"src/**/*.{js,jsx,scss}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,scss}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "staticOutPath": "."
   },
   "keywords": [],
   "author": "",
@@ -26,6 +32,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "parcel": "^2.12.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.3.2",
     "process": "^0.11.10"
   },
